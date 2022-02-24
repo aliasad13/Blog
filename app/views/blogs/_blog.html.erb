@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="blogs-newblog">
+
+  <span class="plus">
+<%= link_to ('<i class="fa fa-plus"></i>').html_safe, new_blog_path %></span>
+</div>
+<br>
+
+<% @blogs.each do |blog| %>
+
+<!--got an error saying no method at .each as @blogs was not defined in users show controller-->
+<!--  goto show cotroller and @blogs = @user.articles -->
+  <div class="card text-center">
+    <div class="card-header">
+      <%= "Published On: #{blog.created_at.day}/ #{blog.created_at.month}/ #{blog.created_at.year}" %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"> <%= link_to blog.title,blog %></h5>
+
+
+        <p class="card-text"><%=blog.desc %></p>
+      <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+      <p>Author: <%=link_to blog.user.username,blog.user %></p>
+
+    </div>
+
+
+    <div class="card-footer text-muted">
+      <% if user_signed_in? && (blog.user == current_user || current_user.admin?)%>
+      <%= link_to ('<i class="fa fa-pen"></i>').html_safe,edit_blog_path(blog),style: 'margin-right:10px' %>
+      <%= link_to ('<i class="fa fa-trash"></i>').html_safe,blog,method: :delete,data: {confirm: 'Are you sure ?'},class:"delete-link"%>
+        <% else %>
+        <% if blog.user %>
+          <p>Author: <%=link_to blog.user.username,blog.user %></p>
+        <% end %>
+    <% end %>
+
+        </div>
+
+  </div>
+<% end %>

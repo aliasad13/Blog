@@ -1,0 +1,36 @@
+<h1 class="text-center mt-4">Foradian Bloggers</h1>
+
+<%= will_paginate @blogs,class:'apple_pagination' %>
+
+<% @users.each do |user| %>
+
+  <!--got an error saying no method at .each as @blogs was not defined in users show controller-->
+  <!--  goto show cotroller and @blogs = @user.articles -->
+  <div class="card text-center">
+    <div class="card-header">
+      <%= link_to user.username,user %>
+
+     joined <%=  time_ago_in_words(user.created_at) %> ago
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title"> <%= link_to gravatar_for(user,size:150),user,class: 'gravatar-to-profile' %></h5>
+<!--      <p>Written By: <%#= blog.user.username if blog.user %></p>-->
+
+      <p class="card-text"><%= pluralize(user.blogs.count,"blogs") %></p>
+
+      <%= link_to "view profile",user %>
+      <!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+
+    </div>
+    <div class="card-footer text-muted">
+      <%# if user_signed_in? && user == current_user %>
+      <%#= link_to ('<i class="fa fa-pen"></i>').html_safe,edit_user_path(user),style: 'margin-right:10px' %>
+      <%#= link_to ('<i class="fa fa-trash"></i>').html_safe,blog,method: :delete,data: {confirm: 'Are you sure ?'},class:"delete-link"%>
+  <%# end %>
+    </div>
+
+  </div>
+<% end %>
+
+<%= will_paginate @blogs,class:'apple_pagination' %>

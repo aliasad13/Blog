@@ -1,0 +1,45 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="show" >
+<p>
+<!--  <strong>Title:</strong>-->
+ <strong> <%= @blog.title %> </strong>
+  <br><br>
+  <%=link_to @blog.user.username,@blog.user %>
+</p>
+
+<!--<p>-->
+<!--  <strong>Desc:</strong>-->
+<p>
+  <%= @blog.desc %>
+</p>
+
+<p>
+<!--  <strong>Content:</strong>-->
+  <%= @blog.content %>
+</p>
+
+
+
+</div>
+<br>
+
+<br>
+<br>
+<p>
+  <% require 'date' %>
+  <%  (DateTime.now.day) - (@blog.updated_at.day)   #2 %>
+  <%= "Last Updated: #{time_ago_in_words(@blog.updated_at)} ago"%>
+
+</p>
+<% if user_signed_in? && (@blog.user == current_user || current_user.admin?)%>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+  <% end %>
+<%= link_to 'Back', blogs_path %>
+
+<br><br><br>
+
+<%= render 'comments/addcomment' %>
+
+<%= render 'comments/showcomment' %>

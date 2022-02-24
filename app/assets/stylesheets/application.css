@@ -1,0 +1,322 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('http://fonts.cdnfonts.com/css/cartagena');Cartagena
+
+.New-Blog{
+
+    margin: 150px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+
+
+}
+.navbar {
+
+    position: fixed!important;
+    width: 100%;
+    user-select: auto;
+    box-shadow: 0 0px 7px 0px black;
+    background: darkslategray;
+    opacity: 1;
+    top: 0;
+    z-index: 9999;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+}
+
+.navbar-toggler:hover{
+
+    box-shadow: 0 0px 7px 0px black;
+}
+
+.navbar-toggler i{
+    margin-top: 4px;
+
+}
+
+a.navbar-brand {
+    color: yellowgreen;
+    font-weight: 900;
+    text-transform: lowercase;
+    font-size: 30px;
+    font-family: 'Cartagena';
+    letter-spacing: 2px;
+
+}
+
+.navbar-brand:hover{
+    background-color: transparent;
+    color: gold!important;
+    transition: 1s;
+}
+.nav-link{
+
+    color:beige!important;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Cartagena';
+}
+
+.nav-link:hover{
+
+    background-color: transparent!important;
+    color: gold!important;
+}
+.yield-container{
+    margin: 40px;
+    margin-top: 100px;
+
+
+}
+
+a{
+
+    text-decoration: none!important;
+
+
+}
+
+.card-header{
+    font-size: small;
+    opacity: 0.5;
+    user-select: auto;
+    box-shadow: 0 0px 4px 0px black;
+
+}
+
+.card-footer{
+
+    font-size: small;
+    opacity: 0.5;
+    user-select: auto;
+    color: #333333;
+    box-shadow: 0 0px 4px 0px black;
+}
+
+.card-footer a{
+
+    color: #333333!important;
+}
+.blogs-newblog{
+    display: flex;
+    justify-content: space-between;
+
+}
+.blogs-newblog span{
+
+    display: flex;
+    align-items: center;
+}
+
+.show{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+}
+.card-header{
+
+    background-color: lightgray!important;
+}
+.card-footer{
+
+    background-color: lightgray!important;
+}
+.card{
+
+    margin-bottom: 10px;
+}
+
+.card-body .card-title a{
+
+    color: forestgreen;
+}
+
+
+.card-body .card-title a:hover{
+    color: lightseagreen;
+    background-color: transparent;
+
+}
+
+a:hover{
+
+    background-color: transparent!important;
+    color: lightseagreen!important;
+}
+.cover{
+    height: 47px;
+    width: 400px;
+    top: 24px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.comments p{
+    margin-bottom: 10px;
+}
+
+.comments a{
+    color: #333333;
+    margin-left: 20px;
+
+}
+
+.comments a:hover{
+    color: red!important;
+
+}
+
+.new-article textarea{height: 220px}
+
+
+.delete-link a:hover{
+
+    color: red!important;
+}
+.time{
+
+    font-size: 10px;
+}
+
+.comment-delete{
+    font-size: 12px;
+
+}
+
+.date-time-arranger{
+    display: flex;
+    width: 315px;
+    justify-content: space-between;
+}
+
+.count{
+
+    position: absolute;
+    bottom: 0px;
+    left: 144px;
+    z-index: 3;
+    top: 900px;
+}
+
+p.card-text {
+
+    color: slategray;
+}
+
+.plus{
+
+    display: flex;
+    width: 59px;
+    z-index: 20;
+    position: fixed;
+    height: 59px;
+    color: transparent;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: .9;
+    left: 90%;
+    background: darkslategray;
+    font-size: 30px;
+}
+.plus:hover{
+    background-color: darkolivegreen;
+    box-shadow: 0 0px 7px 0px black;
+transform: translateY(2px);
+    transition: .25s;
+}
+.fa-plus:before {
+    content: "\f067";
+    color: white!important;
+}
+
+.edit-my-profile
+{
+    position: relative;
+    left: 42%;
+    top: 20px;
+
+}
+.apple_pagination {
+    background: #f1f1f1;
+    /*border: 1px solid #e5e5e5;*/
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+background-color: transparent;
+    transition-duration: 1s;
+    transition: ease-in-out;}
+.apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+.apple_pagination .disabled {
+    color: #aaaaaa; }
+.apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: transparent;
+    color: red;
+    font-size: 20px;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    transition-duration: 1s;
+    transition: font-size;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+.apple_pagination a {
+    text-decoration: none;
+    color: black; }
+.apple_pagination a:hover, .apple_pagination a:focus {
+    text-decoration: underline;
+font-size: 20px;
+transition-duration: 0.20s}
+
+.card-title img{
+
+    border-radius: 1.25rem!important;
+    padding: 10px;
+    background-color: transparent;
+
+}
+
+.gravatar-to-profile img:hover{
+
+    box-shadow: 0 .5rem 1rem darkgrey!important;
+    transform: translateY(-2px);
+
+}
+
+.profile-picture img{
+
+
+    border-radius: 9rem!important;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: 0 .4rem 1rem gray!important;
+}
+

@@ -1,0 +1,23 @@
+
+<div class="show-comment">
+
+  <div class="cover"> <h6>Comments</h6></div>
+  <div class="comments">
+
+  <% @blog.comments.reverse_each do |comment| %>
+      <div class="date-time-arranger">
+    <p>
+      <strong><%= comment.user %>:</strong> <%= comment.body %>
+     <div class="comment-delete"> <%= link_to "Delete", [comment.blog, comment], method: :delete,data: {confirm: 'are you sure ?' },class: 'delete-link'%>
+     </div>
+      </div>
+    </p>
+    <p>
+         </p>
+
+  <% end %>
+
+  </div>
+</div>
+
+<!--[comment.blog, comment]-->

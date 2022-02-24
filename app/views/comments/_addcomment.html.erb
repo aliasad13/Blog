@@ -1,0 +1,17 @@
+<div class="add-comment">
+  <h6>Say something about this article</h6>
+  <br>
+  <%= form_with model: [ @blog, @blog.comments.build ] do |form| %>
+    <p>
+
+      <%= form.text_field :commenter,class:'form-control',placeholder:'Name' %>
+    </p>
+    <p>
+
+      <%= form.text_area :body,class:'form-control',placeholder:'Comment'  %>
+    </p>
+    <p>
+      <%= form.submit  class:'btn btn-outline-secondary' %>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="text-center mt-4"><%= @user.username %></h1>
+
+
+<div class="profile-picture">
+<%= gravatar_for @user,size:200 %>
+</div>
+<% if user_signed_in?%>
+  <% if @user == current_user%>
+<div class="edit-my-profile">
+<%#= link_to ('<i class="fa fa-pen"></i>').html_safe,edit_user_path,style: 'margin-right:10px',class: 'text-center mt-4' %>
+<%= link_to 'Edit Profile',edit_user_path,style: 'margin-right:10px',class:'text-center mt-4' %>
+  <%= link_to 'Delete Profile',user_path(current_user),style: 'margin-right:10px',class:'text-center mt-4',method: :delete,data: {confirm: "Are You Sure?"} %>
+</div>
+<% end %>
+<% if current_user.admin? %>
+<%= link_to 'Delete User',user_path(@user) ,method: :delete,class: 'text-center mt-4',data: {confirm: "Are You Sure?"}%>
+<% end %>
+  <% end %>
+<br>
+<h1 class="text-center mt-4"> Blogs </h1>
+
+<%= will_paginate @blogs,class:'apple_pagination' %>
+<%= render 'blogs/blog' %>
+<%= will_paginate @blogs,class:'apple_pagination' %>
